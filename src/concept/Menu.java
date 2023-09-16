@@ -23,16 +23,11 @@ public class Menu {
 //Main menu function contains home screen
 public  void MainMenu()
     {
-        System.out.println("Welcome to the Pizza Shop \n Please Select one Option \n 1- Order Pizza \n 2- View Orders \n 3- Edit Order \n 4- Pay \n 6- Exit \n Enter option here (e.g 1 2 ):- \n  ");
+        System.out.println("Welcome to the Pizza Shop \n Please Select one Option \n 1- Order Pizza \n 2- View Orders \n 3- Edit Order \n 4- Exit \n Enter option here (e.g 1 2 ):- \n  ");
         input = in.nextInt();
             
-        if(input>=6)
-            {
-                System.out.println("You have enetered an invalid Option Please Try gain \n Enter option here (e.g 1 2 ):- \n");
-                input = in.nextInt();
-            }
-        else
-            {
+            while(input!=4)
+{
                 switch(input)
                     {
                         case 1:
@@ -43,44 +38,55 @@ public  void MainMenu()
                           Editmenu();
                         case 4:
                           System.exit(0);
+                        default:
+                          System.out.println("You have enetered an invalid Option Please Try gain \n Enter option here (e.g 1 2 ):- \n");
+                          input = in.nextInt();
+                          
                     }
-            }
+}
+            
     }
-
 //Menu function that contains pizza  flavours and completes order by adding pizza into array
 public  void menu(String base, String cheese,boolean sause)
  {  
     System.out.println("Please Select your Pizza\n 1- Chicken Pizza \n 2- Pepproni Pizza \n 3- Vegan Pizza \n 4- Margarita Pizza \n Please enter your option = \n");
     int input= in.nextInt();
-    if(input==1)
-        {
+
+    while(input <= 4)
+    {
+    switch(input)
+{  
+    case 1:
+        
             pizza = new ChickenPizza(sause,base,cheese);
             pizzaList.add(pizza);
             completeOrder();
-        }
-    if(input==2)
-        {
+        
+    case 2:
+        
             pizza = new PepproniPizza(sause,base,cheese);
             pizzaList.add(pizza);
             completeOrder();
-        }
-    if(input==3)
-        {
+        
+    case 3:
+        
             pizza = new VeganPizza(sause,base,cheese);
             pizzaList.add(pizza);
             completeOrder();
-        } 
-    else if(input==4)
-        {
+        
+    case 4:
+        
             pizza= new MargaritaPizza(sause,base,cheese);
             pizzaList.add(pizza);
             completeOrder();
-        }
-    else
-        {
+        
+   default:
+        
             System.out.println("Invalid Option Please try again \n Please enter your option = \n");
             input= in.nextInt();
-        }
+        
+}
+}
 
  }
 
