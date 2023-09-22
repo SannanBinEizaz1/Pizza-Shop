@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class PriceTest {
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test() {
 		ChickenPizza chicken = new ChickenPizza(false,"","");

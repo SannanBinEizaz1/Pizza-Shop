@@ -7,7 +7,7 @@ package concept;
 
 /**
  *
- * @author sanna
+ * @author sannan
  */
 public interface IPizza {
 
